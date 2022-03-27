@@ -39,6 +39,7 @@ include_directories(
 )
 
 add_executable(imu_node
+  src/imu_factory.cpp
   src/imu_base_node.cpp
   src/imu_node.cpp
 )
