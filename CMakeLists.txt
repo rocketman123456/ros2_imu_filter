@@ -24,7 +24,6 @@ find_package(sensor_msgs REQUIRED)
 find_package(std_msgs REQUIRED)
 find_package(tf2 REQUIRED)
 find_package(tf2_ros REQUIRED)
-find_package(realsense_msgs REQUIRED)
 
 # Other Packages
 find_package(eigen3_cmake_module REQUIRED)
@@ -52,7 +51,6 @@ ament_target_dependencies(imu_node
   std_msgs
   tf2
   tf2_ros
-  realsense_msgs
   Eigen3
 )
 

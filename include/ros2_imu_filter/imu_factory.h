@@ -1,3 +1,5 @@
+#pragma once
+
 #include <memory>
 #include <string>
 
@@ -16,6 +18,7 @@ namespace Rocket
         virtual ~ImuFactory();
     
     private:
-        std::shared_ptr<ImuBaseNode> node;
+        std::shared_ptr<ImuBaseNode> node_;
+        std::string type_;
     };
 }
