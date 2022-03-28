@@ -1,0 +1,129 @@
+[0.010s] Invoking command in '/home/developer/ros2_ws/src/ros2_imu_filter/build/ros2_imu_filter': CMAKE_PREFIX_PATH=/opt/ros/foxy /usr/bin/cmake --build /home/developer/ros2_ws/src/ros2_imu_filter/build/ros2_imu_filter -- -j12 -l12
+[0.034s] -- Found ament_cmake: 0.9.9 (/opt/ros/foxy/share/ament_cmake/cmake)
+[0.050s] -- Using PYTHON_EXECUTABLE: /usr/bin/python3
+[0.184s] -- Found rclcpp: 2.4.1 (/opt/ros/foxy/share/rclcpp/cmake)
+[0.209s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.212s] -- Found rosidl_adapter: 1.2.1 (/opt/ros/foxy/share/rosidl_adapter/cmake)
+[0.300s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.339s] -- Found rmw_implementation_cmake: 1.0.3 (/opt/ros/foxy/share/rmw_implementation_cmake/cmake)
+[0.340s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[0.451s] -- Found rclcpp_components: 2.4.1 (/opt/ros/foxy/share/rclcpp_components/cmake)
+[0.493s] -- Found nav_msgs: 2.0.5 (/opt/ros/foxy/share/nav_msgs/cmake)
+[0.583s] -- Found sensor_msgs: 2.0.5 (/opt/ros/foxy/share/sensor_msgs/cmake)
+[0.639s] -- Found tf2: 0.13.13 (/opt/ros/foxy/share/tf2/cmake)
+[0.646s] -- Found tf2_ros: 0.13.13 (/opt/ros/foxy/share/tf2_ros/cmake)
+[0.861s] -- Found eigen3_cmake_module: 0.1.1 (/opt/ros/foxy/share/eigen3_cmake_module/cmake)
+[0.864s] -- Found ament_lint_auto: 0.9.6 (/opt/ros/foxy/share/ament_lint_auto/cmake)
+[0.911s] -- Added test 'copyright' to check source files copyright and LICENSE
+[0.920s] -- Added test 'cppcheck' to perform static code analysis on C / C++ code
+[0.920s] -- Configured cppcheck include dirs: /home/developer/ros2_ws/src/ros2_imu_filter/include
+[0.920s] -- Configured cppcheck exclude dirs and/or files: 
+[0.929s] -- Added test 'cpplint' to check C / C++ code against the Google style
+[0.929s] -- Configured cpplint exclude dirs and/or files: 
+[0.930s] -- Added test 'flake8' to check Python code syntax and style conventions
+[0.933s] -- Added test 'lint_cmake' to check CMake code style
+[0.934s] -- Added test 'pep257' to check Python code against some of the style conventions in PEP 257
+[0.943s] -- Added test 'uncrustify' to check C / C++ code style
+[0.943s] -- Configured uncrustify additional arguments: 
+[0.944s] -- Added test 'xmllint' to check XML markup files
+[0.947s] -- Configuring done
+[0.957s] -- Generating done
+[0.959s] -- Build files have been written to: /home/developer/ros2_ws/src/ros2_imu_filter/build/ros2_imu_filter
+[0.982s] [35m[1mScanning dependencies of target imu_node[0m
+[1.022s] [ 40%] [32mBuilding CXX object CMakeFiles/imu_node.dir/src/imu_base_node.cpp.o[0m
+[1.022s] [ 40%] [32mBuilding CXX object CMakeFiles/imu_node.dir/src/imu_factory.cpp.o[0m
+[1.022s] [ 60%] [32mBuilding CXX object CMakeFiles/imu_node.dir/src/imu_complementary_node.cpp.o[0m
+[1.023s] [ 80%] [32mBuilding CXX object CMakeFiles/imu_node.dir/src/imu_node.cpp.o[0m
+[2.691s] In file included from [01m[K/home/developer/ros2_ws/src/ros2_imu_filter/include/ros2_imu_filter/imu_factory.h:9[m[K,
+[2.691s]                  from [01m[K/home/developer/ros2_ws/src/ros2_imu_filter/src/imu_node.cpp:3[m[K:
+[2.691s] [01m[K/home/developer/ros2_ws/src/ros2_imu_filter/include/ros2_imu_filter/imu_complementary_node.h:12:14:[m[K [01;31m[Kerror: [m[K‘[01m[Kvoid Rocket::ImuComplementaryNode::Filter()[m[K’ marked ‘[01m[Koverride[m[K’, but does not override
+[2.691s]    12 |         void [01;31m[KFilter[m[K() override;
+[2.691s]       |              [01;31m[K^~~~~~[m[K
+[2.704s] In file included from [01m[K/home/developer/ros2_ws/src/ros2_imu_filter/src/imu_complementary_node.cpp:1[m[K:
+[2.704s] [01m[K/home/developer/ros2_ws/src/ros2_imu_filter/include/ros2_imu_filter/imu_complementary_node.h:12:14:[m[K [01;31m[Kerror: [m[K‘[01m[Kvoid Rocket::ImuComplementaryNode::Filter()[m[K’ marked ‘[01m[Koverride[m[K’, but does not override
+[2.704s]    12 |         void [01;31m[KFilter[m[K() override;
+[2.704s]       |              [01;31m[K^~~~~~[m[K
+[2.708s] [01m[K/home/developer/ros2_ws/src/ros2_imu_filter/src/imu_base_node.cpp:[m[K In constructor ‘[01m[KRocket::ImuBaseNode::ImuBaseNode(rclcpp::Node&)[m[K’:
+[2.708s] [01m[K/home/developer/ros2_ws/src/ros2_imu_filter/src/imu_base_node.cpp:58:60:[m[K [01;35m[Kwarning: [m[K‘[01m[Krclcpp::Node::OnParametersSetCallbackType rclcpp::Node::set_on_parameters_set_callback(rclcpp::Node::OnParametersSetCallbackType)[m[K’ is deprecated: use add_on_set_parameters_callback(OnParametersSetCallbackType callback) instead [[01;35m[K-Wdeprecated-declarations[m[K]
+[2.708s]    58 |         node_.set_on_parameters_set_callback(param_callback[01;35m[K)[m[K;
+[2.708s]       |                                                            [01;35m[K^[m[K
+[2.708s] In file included from [01m[K/opt/ros/foxy/include/rclcpp/executors/single_threaded_executor.hpp:28[m[K,
+[2.708s]                  from [01m[K/opt/ros/foxy/include/rclcpp/executors.hpp:22[m[K,
+[2.708s]                  from [01m[K/opt/ros/foxy/include/rclcpp/rclcpp.hpp:146[m[K,
+[2.708s]                  from [01m[K/home/developer/ros2_ws/src/ros2_imu_filter/include/ros2_imu_filter/imu_base_node.h:10[m[K,
+[2.708s]                  from [01m[K/home/developer/ros2_ws/src/ros2_imu_filter/src/imu_base_node.cpp:1[m[K:
+[2.708s] [01m[K/opt/ros/foxy/include/rclcpp/node.hpp:866:3:[m[K [01;36m[Knote: [m[Kdeclared here
+[2.708s]   866 |   [01;36m[Kset_on_parameters_set_callback[m[K(rclcpp::Node::OnParametersSetCallbackType callback);
+[2.709s]       |   [01;36m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[2.709s] [01m[K/home/developer/ros2_ws/src/ros2_imu_filter/src/imu_base_node.cpp:60:40:[m[K [01;31m[Kerror: [m[K‘[01m[Kusing SharedPtr = class std::shared_ptr<rclcpp::Clock>[m[K’ {aka ‘[01m[Kclass std::shared_ptr<rclcpp::Clock>[m[K’} has no member named ‘[01m[Know[m[K’
+[2.709s]    60 |         auto stamp = node_.get_clock().[01;31m[Know[m[K().to_msg()
+[2.709s]       |                                        [01;31m[K^~~[m[K
+[2.714s] In file included from [01m[K/home/developer/ros2_ws/src/ros2_imu_filter/include/ros2_imu_filter/imu_factory.h:9[m[K,
+[2.714s]                  from [01m[K/home/developer/ros2_ws/src/ros2_imu_filter/src/imu_factory.cpp:1[m[K:
+[2.714s] [01m[K/home/developer/ros2_ws/src/ros2_imu_filter/include/ros2_imu_filter/imu_complementary_node.h:12:14:[m[K [01;31m[Kerror: [m[K‘[01m[Kvoid Rocket::ImuComplementaryNode::Filter()[m[K’ marked ‘[01m[Koverride[m[K’, but does not override
+[2.714s]    12 |         void [01;31m[KFilter[m[K() override;
+[2.715s]       |              [01;31m[K^~~~~~[m[K
+[2.726s] [01m[K/home/developer/ros2_ws/src/ros2_imu_filter/src/imu_factory.cpp:[m[K In constructor ‘[01m[KRocket::ImuFactory::ImuFactory(const rclcpp::NodeOptions&)[m[K’:
+[2.726s] [01m[K/home/developer/ros2_ws/src/ros2_imu_filter/src/imu_factory.cpp:20:65:[m[K [01;31m[Kerror: [m[Kno match for ‘[01m[Koperator=[m[K’ (operand types are ‘[01m[Kstd::shared_ptr<Rocket::ImuBaseNode>[m[K’ and ‘[01m[Kstd::shared_ptr<Rocket::ImuComplementaryNode>[m[K’)
+[2.726s]    20 |             node_ = std::make_shared<ImuComplementaryNode>(*this[01;31m[K)[m[K;
+[2.726s]       |                                                                 [01;31m[K^[m[K
+[2.726s] In file included from [01m[K/usr/include/c++/9/memory:81[m[K,
+[2.726s]                  from [01m[K/home/developer/ros2_ws/src/ros2_imu_filter/include/ros2_imu_filter/imu_factory.h:3[m[K,
+[2.726s]                  from [01m[K/home/developer/ros2_ws/src/ros2_imu_filter/src/imu_factory.cpp:1[m[K:
+[2.726s] [01m[K/usr/include/c++/9/bits/shared_ptr.h:309:19:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kstd::shared_ptr<_Tp>& std::shared_ptr<_Tp>::operator=(const std::shared_ptr<_Tp>&) [with _Tp = Rocket::ImuBaseNode][m[K’
+[2.726s]   309 |       shared_ptr& [01;36m[Koperator[m[K=(const shared_ptr&) noexcept = default;
+[2.726s]       |                   [01;36m[K^~~~~~~~[m[K
+[2.726s] [01m[K/usr/include/c++/9/bits/shared_ptr.h:309:29:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Kstd::shared_ptr<Rocket::ImuComplementaryNode>[m[K’ to ‘[01m[Kconst std::shared_ptr<Rocket::ImuBaseNode>&[m[K’
+[2.726s]   309 |       shared_ptr& operator=([01;36m[Kconst shared_ptr&[m[K) noexcept = default;
+[2.726s]       |                             [01;36m[K^~~~~~~~~~~~~~~~~[m[K
+[2.727s] [01m[K/usr/include/c++/9/bits/shared_ptr.h:313:2:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _Yp> std::shared_ptr<_Tp>::_Assignable<const std::shared_ptr<_Yp>&> std::shared_ptr<_Tp>::operator=(const std::shared_ptr<_Yp>&) [with _Yp = _Yp; _Tp = Rocket::ImuBaseNode][m[K’
+[2.727s]   313 |  [01;36m[Koperator[m[K=(const shared_ptr<_Yp>& __r) noexcept
+[2.727s]       |  [01;36m[K^~~~~~~~[m[K
+[2.727s] [01m[K/usr/include/c++/9/bits/shared_ptr.h:313:2:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[2.727s] /usr/include/c++/9/bits/shared_ptr.h: In substitution of ‘[01m[Ktemplate<class _Tp> template<class _Arg> using _Assignable = typename std::enable_if<std::is_assignable<std::__shared_ptr<_Tp>&, _Arg>::value, std::shared_ptr<_Tp>&>::type [with _Arg = const std::shared_ptr<Rocket::ImuComplementaryNode>&; _Tp = Rocket::ImuBaseNode][m[K’:
+[2.727s] [01m[K/usr/include/c++/9/bits/shared_ptr.h:313:2:[m[K   required by substitution of ‘[01m[Ktemplate<class _Yp> std::shared_ptr<Rocket::ImuBaseNode>::_Assignable<const std::shared_ptr<_Tp>&> std::shared_ptr<Rocket::ImuBaseNode>::operator=<_Yp>(const std::shared_ptr<_Tp>&) [with _Yp = Rocket::ImuComplementaryNode][m[K’
+[2.727s] [01m[K/home/developer/ros2_ws/src/ros2_imu_filter/src/imu_factory.cpp:20:65:[m[K   required from here
+[2.727s] [01m[K/usr/include/c++/9/bits/shared_ptr.h:111:8:[m[K [01;31m[Kerror: [m[Kno type named ‘[01m[Ktype[m[K’ in ‘[01m[Kstruct std::enable_if<false, std::shared_ptr<Rocket::ImuBaseNode>&>[m[K’
+[2.727s]   111 |  using [01;31m[K_Assignable[m[K = typename enable_if<
+[2.727s]       |        [01;31m[K^~~~~~~~~~~[m[K
+[2.727s] [01m[K/usr/include/c++/9/bits/shared_ptr.h:324:2:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _Yp> std::shared_ptr<_Tp>::_Assignable<std::auto_ptr<_Up> > std::shared_ptr<_Tp>::operator=(std::auto_ptr<_Up>&&) [with _Yp = _Yp; _Tp = Rocket::ImuBaseNode][m[K’
+[2.727s]   324 |  [01;36m[Koperator[m[K=(auto_ptr<_Yp>&& __r)
+[2.727s]       |  [01;36m[K^~~~~~~~[m[K
+[2.727s] [01m[K/usr/include/c++/9/bits/shared_ptr.h:324:2:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[2.727s] [01m[K/home/developer/ros2_ws/src/ros2_imu_filter/src/imu_factory.cpp:20:65:[m[K [01;36m[Knote: [m[K  ‘[01m[Kstd::shared_ptr<Rocket::ImuComplementaryNode>[m[K’ is not derived from ‘[01m[Kstd::auto_ptr<_Up>[m[K’
+[2.727s]    20 |             node_ = std::make_shared<ImuComplementaryNode>(*this[01;36m[K)[m[K;
+[2.727s]       |                                                                 [01;36m[K^[m[K
+[2.727s] In file included from [01m[K/usr/include/c++/9/memory:81[m[K,
+[2.727s]                  from [01m[K/home/developer/ros2_ws/src/ros2_imu_filter/include/ros2_imu_filter/imu_factory.h:3[m[K,
+[2.728s]                  from [01m[K/home/developer/ros2_ws/src/ros2_imu_filter/src/imu_factory.cpp:1[m[K:
+[2.728s] [01m[K/usr/include/c++/9/bits/shared_ptr.h:333:7:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kstd::shared_ptr<_Tp>& std::shared_ptr<_Tp>::operator=(std::shared_ptr<_Tp>&&) [with _Tp = Rocket::ImuBaseNode][m[K’
+[2.728s]   333 |       [01;36m[Koperator[m[K=(shared_ptr&& __r) noexcept
+[2.728s]       |       [01;36m[K^~~~~~~~[m[K
+[2.728s] [01m[K/usr/include/c++/9/bits/shared_ptr.h:333:30:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Kstd::shared_ptr<Rocket::ImuComplementaryNode>[m[K’ to ‘[01m[Kstd::shared_ptr<Rocket::ImuBaseNode>&&[m[K’
+[2.728s]   333 |       operator=([01;36m[Kshared_ptr&& __r[m[K) noexcept
+[2.728s]       |                 [01;36m[K~~~~~~~~~~~~~^~~[m[K
+[2.728s] [01m[K/usr/include/c++/9/bits/shared_ptr.h:341:2:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _Yp> std::shared_ptr<_Tp>::_Assignable<std::shared_ptr<_Yp> > std::shared_ptr<_Tp>::operator=(std::shared_ptr<_Yp>&&) [with _Yp = _Yp; _Tp = Rocket::ImuBaseNode][m[K’
+[2.728s]   341 |  [01;36m[Koperator[m[K=(shared_ptr<_Yp>&& __r) noexcept
+[2.728s]       |  [01;36m[K^~~~~~~~[m[K
+[2.728s] [01m[K/usr/include/c++/9/bits/shared_ptr.h:341:2:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[2.728s] /usr/include/c++/9/bits/shared_ptr.h: In substitution of ‘[01m[Ktemplate<class _Tp> template<class _Arg> using _Assignable = typename std::enable_if<std::is_assignable<std::__shared_ptr<_Tp>&, _Arg>::value, std::shared_ptr<_Tp>&>::type [with _Arg = std::shared_ptr<Rocket::ImuComplementaryNode>; _Tp = Rocket::ImuBaseNode][m[K’:
+[2.728s] [01m[K/usr/include/c++/9/bits/shared_ptr.h:341:2:[m[K   required by substitution of ‘[01m[Ktemplate<class _Yp> std::shared_ptr<Rocket::ImuBaseNode>::_Assignable<std::shared_ptr<_Tp> > std::shared_ptr<Rocket::ImuBaseNode>::operator=<_Yp>(std::shared_ptr<_Tp>&&) [with _Yp = Rocket::ImuComplementaryNode][m[K’
+[2.728s] [01m[K/home/developer/ros2_ws/src/ros2_imu_filter/src/imu_factory.cpp:20:65:[m[K   required from here
+[2.728s] [01m[K/usr/include/c++/9/bits/shared_ptr.h:111:8:[m[K [01;31m[Kerror: [m[Kno type named ‘[01m[Ktype[m[K’ in ‘[01m[Kstruct std::enable_if<false, std::shared_ptr<Rocket::ImuBaseNode>&>[m[K’
+[2.728s]   111 |  using [01;31m[K_Assignable[m[K = typename enable_if<
+[2.728s]       |        [01;31m[K^~~~~~~~~~~[m[K
+[2.729s] [01m[K/usr/include/c++/9/bits/shared_ptr.h:349:2:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _Yp, class _Del> std::shared_ptr<_Tp>::_Assignable<std::unique_ptr<_Up, _Ep> > std::shared_ptr<_Tp>::operator=(std::unique_ptr<_Up, _Ep>&&) [with _Yp = _Yp; _Del = _Del; _Tp = Rocket::ImuBaseNode][m[K’
+[2.729s]   349 |  [01;36m[Koperator[m[K=(unique_ptr<_Yp, _Del>&& __r)
+[2.729s]       |  [01;36m[K^~~~~~~~[m[K
+[2.729s] [01m[K/usr/include/c++/9/bits/shared_ptr.h:349:2:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[2.729s] [01m[K/home/developer/ros2_ws/src/ros2_imu_filter/src/imu_factory.cpp:20:65:[m[K [01;36m[Knote: [m[K  ‘[01m[Kstd::shared_ptr<Rocket::ImuComplementaryNode>[m[K’ is not derived from ‘[01m[Kstd::unique_ptr<_Tp, _Dp>[m[K’
+[2.729s]    20 |             node_ = std::make_shared<ImuComplementaryNode>(*this[01;36m[K)[m[K;
+[2.729s]       |                                                                 [01;36m[K^[m[K
+[3.001s] make[2]: *** [CMakeFiles/imu_node.dir/build.make:89: CMakeFiles/imu_node.dir/src/imu_complementary_node.cpp.o] Error 1
+[3.002s] make[2]: *** Waiting for unfinished jobs....
+[3.002s] make[2]: *** [CMakeFiles/imu_node.dir/build.make:102: CMakeFiles/imu_node.dir/src/imu_node.cpp.o] Error 1
+[3.040s] make[2]: *** [CMakeFiles/imu_node.dir/build.make:63: CMakeFiles/imu_node.dir/src/imu_factory.cpp.o] Error 1
+[4.257s] make[2]: *** [CMakeFiles/imu_node.dir/build.make:76: CMakeFiles/imu_node.dir/src/imu_base_node.cpp.o] Error 1
+[4.257s] make[1]: *** [CMakeFiles/Makefile2:78: CMakeFiles/imu_node.dir/all] Error 2
+[4.257s] make: *** [Makefile:141: all] Error 2
+[4.261s] Invoked command in '/home/developer/ros2_ws/src/ros2_imu_filter/build/ros2_imu_filter' returned '2': CMAKE_PREFIX_PATH=/opt/ros/foxy /usr/bin/cmake --build /home/developer/ros2_ws/src/ros2_imu_filter/build/ros2_imu_filter -- -j12 -l12

@@ -1,0 +1,2 @@
+Invoking command in '/home/developer/ros2_ws/src/ros2_imu_filter/build/ros2_imu_filter': CMAKE_PREFIX_PATH=/opt/ros/foxy /usr/bin/cmake --build /home/developer/ros2_ws/src/ros2_imu_filter/build/ros2_imu_filter -- -j12 -l12
+Invoked command in '/home/developer/ros2_ws/src/ros2_imu_filter/build/ros2_imu_filter' returned '2': CMAKE_PREFIX_PATH=/opt/ros/foxy /usr/bin/cmake --build /home/developer/ros2_ws/src/ros2_imu_filter/build/ros2_imu_filter -- -j12 -l12

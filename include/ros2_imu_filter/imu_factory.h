@@ -6,6 +6,7 @@
 #include "rclcpp/rclcpp.hpp"
 
 #include "ros2_imu_filter/imu_base_node.h"
+#include "ros2_imu_filter/imu_complementary_node.h"
 
 namespace Rocket
 {

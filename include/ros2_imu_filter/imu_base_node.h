@@ -24,6 +24,9 @@ namespace Rocket
         virtual ~ImuBaseNode() = default;
 
     protected:
+        virtual void Filter() {}
+
+    private:
         void UpdateAccelData(const sensor_msgs::msg::Imu::SharedPtr msg);
         void UpdateGyroData(const sensor_msgs::msg::Imu::SharedPtr msg);
 
@@ -37,21 +40,24 @@ namespace Rocket
 
         Result param_change_callback(const std::vector<rclcpp::Parameter> &params);
 
-    private:
+    protected:
         rclcpp::Node& node_;
         rclcpp::Subscription<std_msgs::msg::String>::SharedPtr subscription_;
         rclcpp::Subscription<sensor_msgs::msg::Imu>::SharedPtr accel_subscript_;
         rclcpp::Subscription<sensor_msgs::msg::Imu>::SharedPtr gyro_subscript_;
         std::string accel_topic_;
         std::string gyro_topic_;
+        int64_t accel_msg_count = 0;
+        int64_t gyro_msg_count = 0;
         bool update_on_accel_ = true;
         bool update_on_gyro_ = true;
 
     protected:
-        // TODO define data type
-        Eigen::Vector3d accel;
-        Eigen::Vector3d gyro;
-        double last_time_ms;
+        Eigen::Matrix3d rotation_ = Eigen::Matrix3d::Identity();
+        Eigen::Vector3d accel_ = Eigen::Vector3d::Zero();
+        Eigen::Vector3d gyro_ = Eigen::Vector3d::Zero();
+        double last_time_ms_;
+        double dt_ms_ = 0;
 
         std::mutex mutex_;
     };

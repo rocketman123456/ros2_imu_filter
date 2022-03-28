@@ -15,8 +15,11 @@ namespace Rocket
         if(type_ == "empty") {
             node_ = std::make_shared<ImuBaseNode>(*this);
         } else if(type_ == "kalman") {
+            
         } else if(type_ == "complementary") {
+            node_ = std::make_shared<ImuComplementaryNode>(*this);
         } else if(type_ == "mahony") {
+
         }
     }
 

@@ -1,0 +1,13 @@
+In file included from [01m[K/usr/include/c++/9/memory:81[m[K,
+                 from [01m[K/home/developer/ros2_ws/src/ros2_imu_filter/include/ros2_imu_filter/imu_factory.h:3[m[K,
+                 from [01m[K/home/developer/ros2_ws/src/ros2_imu_filter/src/imu_factory.cpp:1[m[K:
+/usr/include/c++/9/bits/shared_ptr.h: In instantiation of ‘[01m[Kstd::shared_ptr<_Tp> std::dynamic_pointer_cast(const std::shared_ptr<_Tp>&) [with _Tp = Rocket::ImuBaseNode; _Up = Rocket::ImuComplementaryNode][m[K’:
+[01m[K/home/developer/ros2_ws/src/ros2_imu_filter/src/imu_factory.cpp:20:105:[m[K   required from here
+[01m[K/usr/include/c++/9/bits/shared_ptr.h:510:23:[m[K [01;31m[Kerror: [m[K‘[01m[KRocket::ImuBaseNode[m[K’ is an inaccessible base of ‘[01m[KRocket::ImuComplementaryNode[m[K’
+  510 |       if (auto* __p = [01;31m[Kdynamic_cast<typename _Sp::element_type*>(__r.get())[m[K)
+      |                       [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/usr/include/c++/9/bits/shared_ptr.h:510:23:[m[K [01;31m[Kerror: [m[K‘[01m[KRocket::ImuBaseNode[m[K’ is an inaccessible base of ‘[01m[KRocket::ImuComplementaryNode[m[K’
+make[2]: *** [CMakeFiles/imu_node.dir/build.make:63: CMakeFiles/imu_node.dir/src/imu_factory.cpp.o] Error 1
+make[2]: *** Waiting for unfinished jobs....
+make[1]: *** [CMakeFiles/Makefile2:78: CMakeFiles/imu_node.dir/all] Error 2
+make: *** [Makefile:141: all] Error 2

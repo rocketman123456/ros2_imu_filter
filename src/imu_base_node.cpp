@@ -56,6 +56,9 @@ namespace Rocket
         auto param_callback = 
             std::bind(&ImuBaseNode::param_change_callback, this, std::placeholders::_1);
         node_.set_on_parameters_set_callback(param_callback);
+
+        auto header = std_msgs::msg::Header();
+        last_time_ms_ = header.stamp.sec * 1000.0 + header.stamp.nanosec * 0.001;
     }
 
     void ImuBaseNode::topic_callback(const std_msgs::msg::String::SharedPtr msg) const
@@ -68,7 +71,9 @@ namespace Rocket
         UpdateAccelData(msg);
         if(update_on_accel_) {
             HandleAccelData(msg);
+            Filter();
         }
+        ++accel_msg_count;
     }
 
     void ImuBaseNode::gyro_topic_callback(const sensor_msgs::msg::Imu::SharedPtr msg)
@@ -76,55 +81,57 @@ namespace Rocket
         UpdateGyroData(msg);
         if(update_on_gyro_) {
             HandleGyroData(msg);
+            Filter();
         }
+        ++gyro_msg_count;
     }
 
     void ImuBaseNode::UpdateAccelData(const sensor_msgs::msg::Imu::SharedPtr msg)
     {
         static int64_t count_update_accel = 0;
-        if(count_update_accel % 1000 == 0)
+        if(count_update_accel % 250 == 0)
             RCLCPP_INFO(node_.get_logger(), "I heard: 'accel topic %d': %f, %f, %f", count_update_accel, 
                 msg->linear_acceleration.x, msg->linear_acceleration.y, msg->linear_acceleration.z);
         ++count_update_accel;
         std::lock_guard<std::mutex> lock(mutex_);
-        accel << msg->linear_acceleration.x, msg->linear_acceleration.y, msg->linear_acceleration.z;
+        accel_ << msg->linear_acceleration.x, msg->linear_acceleration.y, msg->linear_acceleration.z;
     }
 
     void ImuBaseNode::HandleAccelData(const sensor_msgs::msg::Imu::SharedPtr msg)
     {
         static int64_t count_handle_accel = 0;
-        if(count_handle_accel % 1000 == 0)
+        if(count_handle_accel % 250 == 0)
             RCLCPP_INFO(node_.get_logger(), "I heard: 'accel time %d': %d, %d", count_handle_accel, 
                 msg->header.stamp.sec, msg->header.stamp.nanosec);
         ++count_handle_accel;
         std::lock_guard<std::mutex> lock(mutex_);
-        // TODO : handle data
-        //std_msgs::msg::Header& header = msg->header;
-        //auto stamp = header.stamp;
+        double current_time_ms = msg->header.stamp.sec * 1000.0 + msg->header.stamp.nanosec * 0.001;
+        dt_ms_ = current_time_ms - last_time_ms_;
+        last_time_ms_ = current_time_ms;
     }
 
     void ImuBaseNode::UpdateGyroData(const sensor_msgs::msg::Imu::SharedPtr msg)
     {
         static int64_t count_update_gyro = 0;
-        if(count_update_gyro % 1000 == 0)
+        if(count_update_gyro % 400 == 0)
             RCLCPP_INFO(node_.get_logger(), "I heard: 'gyro topic %d': %f, %f, %f", count_update_gyro, 
                 msg->angular_velocity.x, msg->angular_velocity.y, msg->angular_velocity.z);
         ++count_update_gyro;
         std::lock_guard<std::mutex> lock(mutex_);
-        gyro << msg->angular_velocity.x, msg->angular_velocity.y, msg->angular_velocity.z;
+        gyro_ << msg->angular_velocity.x, msg->angular_velocity.y, msg->angular_velocity.z;
     }
 
     void ImuBaseNode::HandleGyroData(const sensor_msgs::msg::Imu::SharedPtr msg)
     {
         static int64_t count_handle_gyro = 0;
-        if(count_handle_gyro % 1000 == 0)
+        if(count_handle_gyro % 400 == 0)
             RCLCPP_INFO(node_.get_logger(), "I heard: 'gyro time %d': %d, %d", count_handle_gyro, 
                 msg->header.stamp.sec, msg->header.stamp.nanosec);
         ++count_handle_gyro;
         std::lock_guard<std::mutex> lock(mutex_);
-        // TODO : handle data
-        //std_msgs::msg::Header& header = msg->header;
-        //auto stamp = header.stamp;
+        double current_time_ms = msg->header.stamp.sec * 1000.0 + msg->header.stamp.nanosec * 0.001;
+        dt_ms_ = current_time_ms - last_time_ms_;
+        last_time_ms_ = current_time_ms;
     }
 
     Result ImuBaseNode::param_change_callback(const std::vector<rclcpp::Parameter> &params)
