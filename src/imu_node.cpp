@@ -7,4 +7,5 @@ int main(int argc, char** argv) {
     auto imu_node = std::make_shared<Rocket::ImuFactory>();
     rclcpp::spin(imu_node);
     rclcpp::shutdown();
+    return 0;
 }
