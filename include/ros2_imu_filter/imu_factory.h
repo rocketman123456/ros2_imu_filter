@@ -7,6 +7,8 @@
 
 #include "ros2_imu_filter/imu_base_node.h"
 #include "ros2_imu_filter/imu_complementary_node.h"
+#include "ros2_imu_filter/imu_kalman_node.h"
+#include "ros2_imu_filter/imu_mahony_node.h"
 
 namespace Rocket
 {

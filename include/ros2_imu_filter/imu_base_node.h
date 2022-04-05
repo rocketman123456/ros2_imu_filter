@@ -10,6 +10,7 @@
 #include "rclcpp/rclcpp.hpp"
 #include "std_msgs/msg/string.hpp"
 #include "sensor_msgs/msg/imu.hpp"
+#include "rcl_interfaces/msg/set_parameters_result.hpp"
 
 #include "ros2_imu_filter/imu_constant.h"
 
@@ -45,6 +46,7 @@ namespace Rocket
         rclcpp::Subscription<std_msgs::msg::String>::SharedPtr subscription_;
         rclcpp::Subscription<sensor_msgs::msg::Imu>::SharedPtr accel_subscript_;
         rclcpp::Subscription<sensor_msgs::msg::Imu>::SharedPtr gyro_subscript_;
+        rclcpp::node_interfaces::OnSetParametersCallbackHandle::SharedPtr callback_handle_;
         std::string accel_topic_;
         std::string gyro_topic_;
         int64_t accel_msg_count = 0;

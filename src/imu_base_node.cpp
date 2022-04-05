@@ -4,6 +4,8 @@
 
 namespace Rocket
 {
+    
+
     ImuBaseNode::ImuBaseNode(rclcpp::Node& node)
         : node_(node)
     {
@@ -53,10 +55,12 @@ namespace Rocket
             gyro_callback
         );
 
-        node_.add_on_set_parameters_callback(std::bind(&ImuBaseNode::param_change_callback, this, std::placeholders::_1));
+        callback_handle_ = node_.add_on_set_parameters_callback(
+            std::bind(&ImuBaseNode::param_change_callback, this, std::placeholders::_1)
+        );
 
-        auto header = std_msgs::msg::Header();
-        last_time_ms_ = header.stamp.sec * 1000.0 + header.stamp.nanosec * 0.001 * 0.001;
+        // auto header = std_msgs::msg::Header();
+        // last_time_ms_ = header.stamp.sec * 1000.0 + header.stamp.nanosec * 0.001 * 0.001;
     }
 
     void ImuBaseNode::topic_callback(const std_msgs::msg::String::SharedPtr msg) const

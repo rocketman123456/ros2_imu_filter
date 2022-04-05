@@ -41,6 +41,8 @@ add_executable(imu_node
   src/imu_factory.cpp
   src/imu_base_node.cpp
   src/imu_complementary_node.cpp
+  src/imu_kalman_node.cpp
+  src/imu_mahony_node.cpp
   src/imu_node.cpp
   src/kalman_filter.cpp
 )

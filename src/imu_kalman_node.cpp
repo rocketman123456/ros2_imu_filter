@@ -1,7 +1,7 @@
-#include "ros2_imu_filter/imu_complementary_node.h"
+#include "ros2_imu_filter/imu_kalman_node.h"
 
 namespace Rocket {
-    void ImuComplementaryNode::Filter() {
+    void ImuKalmanNode::Filter() {
         // First wait for stable data
         if(accel_msg_count < WAIT_COUNT || gyro_msg_count < WAIT_COUNT) {
             return;
