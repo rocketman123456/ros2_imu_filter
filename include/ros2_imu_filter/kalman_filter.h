@@ -5,5 +5,5 @@
 #include <Eigen/Eigen>
 
 std::tuple<Eigen::MatrixXf, Eigen::MatrixXf> kalman_filter(
-    Eigen::MatrixXf x, Eigen::MatrixXf P, Eigen::MatrixXf u, Eigen::MatrixXf F, 
-    Eigen::MatrixXf H, Eigen::MatrixXf R, Eigen::MatrixXf I, uint32_t measurements);
+    Eigen::MatrixXf x_t_1, Eigen::MatrixXf u_t, Eigen::MatrixXf z_t, Eigen::MatrixXf A_t, Eigen::MatrixXf B_t,  
+    Eigen::MatrixXf C_t, Eigen::MatrixXf S_t_1, Eigen::MatrixXf R_t, Eigen::MatrixXf Q_t, Eigen::MatrixXf I);
