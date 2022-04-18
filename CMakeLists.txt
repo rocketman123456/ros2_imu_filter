@@ -45,6 +45,7 @@ add_executable(imu_node
   src/imu_mahony_node.cpp
   src/imu_node.cpp
   src/kalman_filter.cpp
+  src/mahony_filter.cpp
 )
 
 ament_target_dependencies(imu_node

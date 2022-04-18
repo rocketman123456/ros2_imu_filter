@@ -51,11 +51,13 @@ namespace Rocket
         std::string gyro_topic_;
         int64_t accel_msg_count = 0;
         int64_t gyro_msg_count = 0;
-        bool update_on_accel_ = true;
+        bool update_on_accel_ = false;
         bool update_on_gyro_ = true;
 
     protected:
         Eigen::Matrix3d rotation_ = Eigen::Matrix3d::Identity();
+        Eigen::Matrix3d accel_covariance_ = Eigen::Matrix3d::Identity();
+        Eigen::Matrix3d gyro_covariance_ = Eigen::Matrix3d::Identity();
         Eigen::Vector3d accel_ = Eigen::Vector3d::Zero();
         Eigen::Vector3d gyro_ = Eigen::Vector3d::Zero();
         double last_time_ms_;
